@@ -4,6 +4,6 @@ function _find_latest_nfc_folder
     if test (count $matched_dirs) -eq 0
         return
     end
-    set -l sorted (string join0 $matched_dirs | string split0 | sort -r)
+    set -l sorted (printf "%s\n" $matched_dirs | sort -r)
     echo $sorted[1]
 end
